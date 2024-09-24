@@ -1,36 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import = "java.util.Date" %>
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-	<meta charset="EUC-KR">
 	<title>Welcome</title>
 </head>
 <body>
-	<header class = "pb-3 mb-4 border-bottom">
-		<a href = "./welcome.jsp" class="d-flex align-items-center text-dark
-		text-decoration-none"> 
 		
-		<svg 
-			width = "32" 
-			height = "32" 
-			fill = "currentColor" 
-			class = "bi bi-house-fill" 
-			viewBox = " 0 0 16 16"
-			>
-			
-			<path d= "" />
-			<path d= "" />
-			
-		</svg>	
-			<span class="fs-4">home</span>
-		</a>
-		</header>
+	<%@ include file="menu.jsp" %>
 
 	<%!
-	String greeting = "µµ¼­ ¼îÇÎ¸ô¿¡ ¿À½Å °ÍÀ» È¯¿µÇÕ´Ï´Ù!!";
+	String greeting = "ë„ì„œ ì‡¼í•‘ëª°ì— ì˜¤ì‹  ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤!!";
 	String tagline = "welcome to Web Market!"; 
 	%>
 	
@@ -50,21 +33,22 @@
 	      	String am_pm;
 	      	int hour=day.getHours();
 	      	int minute=day.getMinutes();
-	      	int second=daySeconds();
+	      	int second=day.getSeconds();
+	      	
 	      	if (hour / 12 ==0) {
-	      		am_pm = 'AM';
+	      		am_pm = "AM";
 	      	} else {
-	      		am_pm='PM';
-	      		hour=hour - 12;
+	      		am_pm = "PM";
+	      		hour -= 12; // hour = hour - 12;
 	      	}
-	      	String CT=hour + ":" + minute + ":" + second + " " + am_pm;
-	      	out.println("ÇöÀç Á¢¼Ó ½Ã°¢: " + CT + "\n");
+	      	String CT = hour + ":" + minute + ":" + second + " " + am_pm;
+	      	out.println("í˜„ìž¬ ì ‘ì† ì‹œê°: " + CT + "\n");
 	      %>
 	    </div>
 	  </div>
 	</div>
 	
-	
+	<%@ include file="footer.jsp" %>
 	
 </body>
 </html>
