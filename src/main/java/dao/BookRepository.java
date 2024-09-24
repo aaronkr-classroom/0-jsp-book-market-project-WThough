@@ -16,13 +16,21 @@ public class BookRepository {
 		book1.setUnitsInStock(0);
 		book1.setReleaseDate(null);
 		
-		Book book2 = new Book("ISBN1234" , "C# 프로그래밍" , 27000);
+		Book book2 = new Book("ISBN1235" , "자바마스터" , 30000);
 		book2.setAuthor(null);
 		book2.setDescription(null);
 		book2.setPublisher(null);
 		book2.setCategory(null);
 		book2.setUnitsInStock(0);
 		book2.setReleaseDate(null);
+		
+		Book book3 = new Book("ISBN1236" , "파이썬 프로그래밍" , 30000);
+		book3.setAuthor(null);
+		book3.setDescription(null);
+		book3.setPublisher(null);
+		book3.setCategory(null);
+		book3.setUnitsInStock(0);
+		book3.setReleaseDate(null);
 		
 		
 		

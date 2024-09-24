@@ -3,37 +3,38 @@ package dto;
 import java.io.Serializable;
 
 public class Book implements Serializable {
-	
+
 	private static final long serialVersionUID = -4274700572038677000L;
 	
-	private String bookid;      //도서ID
-	private String name;        //도서명
-	private int unitPrice;   //가격
-	private String author;      //저자
-	private String description; //설명
-	private String publisher;   //출판사
-	private String category;    //분류
-	private String unitsInStock;//재고 개수
-	private String releaseDate; //출판일 (월/년)
-	private String condition;   //신제품 or 구제품 or 맆퍼브제품
-
-	//생성자
+	private String bookId;			// 도서ID
+	private String name; 			// 도서명
+	private int unitPrice;			// 가격
+	private String author;			// 저자
+	private String description;		// 설명
+	private String publisher;		// 출판사
+	private String category;		// 분류
+	private long unitsInStock;		// 재고 개수
+	private String releaseDate;		// 출판일 (월/년)
+	private String condition;		// 신제품 or 구제품 or 리퍼브제품
+	
+	// 생성자
 	public Book() {
 		super(); // Serializable() 부모 클래스의 생성자를 호출하기
 	}
 	
 	public Book(String bookId, String name, Integer unitPrice) {
-		this.bookid=bookId;
-		this.name=name;
-		this.unitPrice=unitPrice;
+		this.bookId = bookId;
+		this.name = name;
+		this.unitPrice = unitPrice;
 	}
 
-	public String getBookid() {
-		return bookid;
+	// Getter와 Setter 함수들
+	public String getBookId() {
+		return bookId;
 	}
 
-	public void setBookid(String bookid) {
-		this.bookid = bookid;
+	public void setBookId(String bookId) {
+		this.bookId = bookId;
 	}
 
 	public String getName() {
@@ -84,11 +85,11 @@ public class Book implements Serializable {
 		this.category = category;
 	}
 
-	public String getUnitsInStock() {
+	public long getUnitsInStock() {
 		return unitsInStock;
 	}
 
-	public void setUnitsInStock(String unitsInStock) {
+	public void setUnitsInStock(long unitsInStock) {
 		this.unitsInStock = unitsInStock;
 	}
 
@@ -108,8 +109,6 @@ public class Book implements Serializable {
 		this.condition = condition;
 	}
 	
-
-	//Getter 의 Setter 함수들
 	
 	
 }
