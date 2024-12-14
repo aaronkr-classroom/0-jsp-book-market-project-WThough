@@ -17,18 +17,17 @@ public class Book implements Serializable {
 	private String releaseDate;		// 출판일 (월/년)
 	private String condition;		// 신제품 or 구제품 or 리퍼브제품
 	
-	// 생성자
 	public Book() {
-		super(); // Serializable() 부모 클래스의 생성자를 호출하기
+		super();
 	}
 	
-	public Book(String bookId, String name, Integer unitPrice) {
+	public Book(String bookId, String name, int unitPrice) {
+		super();
 		this.bookId = bookId;
 		this.name = name;
 		this.unitPrice = unitPrice;
 	}
 
-	// Getter와 Setter 함수들
 	public String getBookId() {
 		return bookId;
 	}
@@ -108,7 +107,14 @@ public class Book implements Serializable {
 	public void setCondition(String condition) {
 		this.condition = condition;
 	}
-	
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	
 	
 }
+
+
+	
+	

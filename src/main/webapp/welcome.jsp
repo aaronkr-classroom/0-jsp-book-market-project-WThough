@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import = "java.util.Date" %>
 <!DOCTYPE html>
 <html>
@@ -9,9 +8,8 @@
 	<title>Welcome</title>
 </head>
 <body>
-	
+<div class="container py-4">
 	<%@ include file="menu.jsp" %>
-	
 	<%!
 	String greeting = "도서 쇼핑몰에 오신 것을 환영합니다!";
 	String tagline = "Welcome to Web Market!";
@@ -29,6 +27,7 @@
 			<div class="h-100 p-5">
 				<h3><%= tagline %></h3>
 				<%
+					response.setIntHeader("Refresh", 5);
 					Date day = new java.util.Date();
 					String am_pm;
 					int hour = day.getHours();
@@ -39,15 +38,15 @@
 						am_pm = "AM";
 					} else {
 						am_pm = "PM";
-						hour -= 12; // hour = hour - 12;
+						hour = hour - 12; // hour = hour - 12;
 					}
-					
 					String CT = hour + ":" + min + ":" + sec + " " + am_pm;
 					out.println("현재 접속 시각: " + CT + "\n");
 				%>
 			</div>
 		</div>
 	</div>
+</div>
 	
 	<%@ include file="footer.jsp" %>
 	
